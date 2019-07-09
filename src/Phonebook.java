@@ -39,9 +39,9 @@ public class Phonebook
                     System.out.println("Введенный телефон в базе отсутствует!");
                     System.out.println("Введите ФИО нового абонента:");
                     String fio = in.nextLine().trim();
-                    while (fio.length() == 0)
-                    {
-                        System.out.println("Введено пустое значение!");
+                    while (!fio.matches("^[А-ЯA-Z][а-яa-zА-ЯA-Z\\-]{0,}\\s+[А-ЯA-Z][а-яa-zА-ЯA-Z\\-]{1,}\\s+([А-ЯA-Z][а-яa-zА-ЯA-Z\\-]{1,}\\s*)?$"))
+                    {//Минимум 2 слова, первые буквы заглавные, между словами сколько угодно пробелов, отчество опционально, в словах могут быть тире
+                        System.out.println("Неправильно указано ФИО!");
                         System.out.println("Введите ФИО нового абонента:");
                         fio = in.nextLine().trim();
                     }
